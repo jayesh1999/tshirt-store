@@ -16,7 +16,6 @@ const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
 const stripeRoutes = require("./routes/stripepayment");
 
-
 //DB Connection
 mongoose
   .connect(process.env.DATABASE, {
@@ -34,9 +33,13 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 8000;
 
 app.use(express.static(path.join(__dirname, "client", "build")));
+
+app.get("/fg", function (req, res) {
+  res.send("hello world");
+});
 
 app.use("/api", authRoute);
 app.use("/api", userRoute);
@@ -44,6 +47,5 @@ app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
 app.use("/api", stripeRoutes);
-
 
 app.listen(port, () => console.log(`App is running at ${port}`));
