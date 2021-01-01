@@ -1,3 +1,4 @@
+const path = require("path");
 require("dotenv").config();
 
 const express = require("express");
@@ -14,6 +15,7 @@ const categoryRoutes = require("./routes/category");
 const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
 const stripeRoutes = require("./routes/stripepayment");
+
 
 //DB Connection
 mongoose
@@ -33,6 +35,8 @@ app.use(cookieParser());
 app.use(cors());
 
 const port = process.env.port || 8000;
+
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.use("/api", authRoute);
 app.use("/api", userRoute);
