@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
-const port = process.env.port || 8000;
+const port = process.env.port
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
