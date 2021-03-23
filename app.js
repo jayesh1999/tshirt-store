@@ -28,7 +28,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-//Middlewares
+//Middlewares for databases
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
