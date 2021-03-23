@@ -28,7 +28,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-//Middlewares for databases
+//Middlewares for databases mangoos or mangodb database
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
