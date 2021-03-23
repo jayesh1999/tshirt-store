@@ -16,7 +16,7 @@ const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
 const stripeRoutes = require("./routes/stripepayment");
 
-//DB Connection
+//DB Connection code for mongodb
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
